@@ -1,5 +1,5 @@
 # MFUN 轻量影视媒体库 (梅林固件优化版)
-[![license](https://img.shields.io/github/license/Genius-Society/MFUN.svg)](https://github.com/Genius-Society/MFUN/blob/master/LICENSE)
+[![license](https://img.shields.io/github/license/Genius-Society/MFUN.svg)](https://github.com/Genius-Society/MFUN/blob/main/LICENSE)
 [![sourceforge](https://img.shields.io/badge/release-SourceForge-ff6600.svg)](https://sourceforge.net/projects/mfun/files)
 
 The MFUN plugin on Merlin, **my version supports intranet tunneling**:
