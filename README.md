@@ -1,12 +1,18 @@
 # MFUN 轻量影视媒体库 (梅林固件优化版)
 [![license](https://img.shields.io/github/license/Genius-Society/MFUN.svg)](https://github.com/Genius-Society/MFUN/blob/master/LICENSE)
-[![sourceforge](https://img.shields.io/badge/sourceforge-MFUN-ff6600.svg)](https://sourceforge.net/projects/mfun/files)
+[![sourceforge](https://img.shields.io/badge/release-SourceForge-ff6600.svg)](https://sourceforge.net/projects/mfun/files)
 
 The MFUN plugin on Merlin, **my version supports intranet tunneling**:
 ![](https://foruda.gitee.com/images/1732332422663431272/c29bc93a_14243051.png)
 
 ## Environment
 Install [7-zip](https://www.7-zip.org/download.html) and add it to environment variables, install Python 3.9+ on Windows 10
+
+## Code download
+```bash
+git clone git@github.com:Genius-Society/MFUN.git
+cd MFUN
+```
 
 ## Remove CRLFs caused by Windows
 (If happens at the first time of cloning into windows local)<br>
@@ -40,5 +46,5 @@ python build.py
 Support HTTPS intranet tunneling
 
 ## Thanks
-[1] <https://github.com/Carseason/rogsoft_mfun><br>
-[2] <https://rogsoft.ddnsto.com/mfun/mfun.tar.gz>
+- <https://github.com/Carseason/rogsoft_mfun>
+- <https://rogsoft.ddnsto.com/mfun/mfun.tar.gz>
