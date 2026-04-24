@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="robots" content="index, follow">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script type="text/javascript" src="./js/calculator.js"></script>
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body style="background: white;">
+  <table border="1" id="maintab">
+    <tbody>
+      <tr>
+        <td>教程</td>
+        <td>
+          <iframe src="//player.bilibili.com/player.html?bvid=BV1yTrgYVEVK&p=2&autoplay=0" scrolling="no" border="0"
+            frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
+        </td>
+      </tr>
+      <tr>
+        <td class="col-1"><label for="key">调性</label></td>
+        <td class="col-2">
+          <select id="key">
+            <option value="Cb">C♭</option>
+            <option value="Gb">G♭</option>
+            <option value="Db">D♭</option>
+            <option value="Ab">A♭</option>
+            <option value="Eb">E♭</option>
+            <option value="Bb">B♭</option>
+            <option value="F">F</option>
+            <option value="C" selected="selected">C</option>
+            <option value="G">G</option>
+            <option value="D">D</option>
+            <option value="A">A</option>
+            <option value="E">E</option>
+            <option value="B">B</option>
+            <option value="F#">F♯</option>
+            <option value="C#">C♯</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td><label for="key">调式</label></td>
+        <td>
+          <select id="mode" onchange="change_mode()">
+            <option value="Major" selected="selected">大调</option>
+            <option value="Minor">小调</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td><label for="bassNote">低音</label></td>
+        <td>
+          <select id="bassNote">
+            <option value="C" selected="selected">C</option>
+            <option value="D">D</option>
+            <option value="E">E</option>
+            <option value="F">F</option>
+            <option value="G">G</option>
+            <option value="A">A</option>
+            <option value="B">B</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td><label for="accidental">变音记号</label></td>
+        <td>
+          <select id="accidental">
+            <option value="bb">♭♭</option>
+            <option value="b">♭</option>
+            <option value="" selected="selected">&nbsp;</option>
+            <option value="n">♮</option>
+            <option value="#">♯</option>
+            <option value="##">♯♯</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td><label for="figures">数字</label></td>
+        <td>
+          <span class="dropdown">
+            <span class="dropdown-content" id="dropdown">
+              <table border="1">
+                <tbody>
+                  <tr>
+                    <td><input type="radio" name="figures" class="figure" value="noFigure" id="noFigure"
+                        checked="checked" onclick="close_dropdown()"><label for="noFigure">无数字</label>
+                    </td>
+                    <td><input type="radio" name="figures" class="figure" value="0" id="0"
+                        onclick="close_dropdown()"><label for="0">Tasto solo</label></td>
+                    <td><input type="radio" name="figures" class="figure" value="42" id="2"
+                        onclick="close_dropdown()"><label for="2">2</label></td>
+                    <td><input type="radio" name="figures" class="figure" value="4#2" id="4#2"
+                        onclick="close_dropdown()"><label for="4#2">♯2 / <img class="single-figure" src="./src/2+.png"
+                          height="15" valign="middle" alt="2+"></label></td>
+                    <td><input type="radio" name="figures" class="figure" value="3" id="3"
+                        onclick="close_dropdown()"><label for="3">3</label></td>
+                  </tr>
+                  <tr>
+                    <td><input type="radio" name="figures" class="figure" value="#" id="#"
+                        onclick="close_dropdown()"><label for="#">♯ / ♯3</label></td>
+                    <td><input type="radio" name="figures" class="figure" value="b" id="b"
+                        onclick="close_dropdown()"><label for="b">♭ / ♭3</label></td>
+                    <td><input type="radio" name="figures" class="figure" value="n" id="n"
+                        onclick="close_dropdown()"><label for="n">♮ / ♮3</label></td>
+                    <td><input type="radio" name="figures" class="figure" value="4" id="4"
+                        onclick="close_dropdown()"><label for="4">4 / <img class="double-figure" src="./src/54.png"
+                          height="20" valign="middle" alt="54"></label></td>
+                    <td><input type="radio" name="figures" class="figure" value="4b3" id="4b3"
+                        onclick="close_dropdown()"><label for="4b3"><img class="double-figure" src="./src/4b.png"
+                          height="20" valign="middle" alt="4b"> / <img class="double-figure" src="./src/4b3.png"
+                          height="20" valign="middle" alt="4b3"></label></td>
+                  </tr>
+                  <tr>
+                    <td><input type="radio" name="figures" class="figure" value="#4b3" id="#4b3"
+                        onclick="close_dropdown()"><label for="#4b3"><img class="double-figure" src="./src/4+b3.png"
+                          height="20" valign="middle" alt="#4b3"></label></td>
+                    <td><input type="radio" name="figures" class="figure" value="42" id="42"
+                        onclick="close_dropdown()"><label for="42"><img class="double-figure" src="./src/42.png"
+                          height="20" valign="middle" alt="42"></label></td>
+                    <td><input type="radio" name="figures" class="figure" value="#42" id="#42"
+                        onclick="close_dropdown()"><label for="#42"><img class="double-figure" src="./src/4+2.png"
+                          height="20" valign="middle" alt="4+2"> / <img class="double-figure" src="./src/+42.png"
+                          height="20" valign="middle" alt="#42"></label></td>
+                    <td><input type="radio" name="figures" class="figure" value="43" id="43"
+                        onclick="close_dropdown()"><label for="43"><img class="double-figure" src="./src/43.png"
+                          height="20" valign="middle" alt="43"></label></td>
+                    <td><input type="radio" name="figures" class="figure" value="5" id="5"
+                        onclick="close_dropdown()"><label for="5">5</label></td>
+                  </tr>
+                  <tr>
+                    <td><input type="radio" name="figures" class="figure" value="#5" id="#5"
+                        onclick="close_dropdown()"><label for="#5">♯5</label></td>
+                    <td><input type="radio" name="figures" class="figure" value="b5" id="b5"
+                        onclick="close_dropdown()"><label for="b5">♭5</label></td>
+                    <td><input type="radio" name="figures" class="figure" value="53" id="53"
+                        onclick="close_dropdown()"><label for="53"><img class="double-figure" src="./src/53.png"
+                          height="20" valign="middle" alt="53"></label></td>
+                    <td><input type="radio" name="figures" class="figure" value="5#3" id="5#3"
+                        onclick="close_dropdown()"><label for="5#3"><img class="double-figure" src="./src/5+3.png"
+                          height="20" valign="middle" alt="5#3"> / <img class="double-figure" src="./src/5+.png"
+                          height="20" valign="middle" alt="5#"></label></td>
+                    <td><input type="radio" name="figures" class="figure" value="6" id="6"
+                        onclick="close_dropdown()"><label for="6">6</label></td>
+                  </tr>
+                  <tr>
+                    <td><input type="radio" name="figures" class="figure" value="#6" id="#6"
+                        onclick="close_dropdown()"><label for="#6"><img class="single-figure" src="./src/6slash.png"
+                          height="18" valign="middle" alt="6\"> / ♯6</label></td>
+                    <td><input type="radio" name="figures" class="figure" value="b6" id="b6"
+                        onclick="close_dropdown()"><label for="b6">♭6</label></td>
+                    <td><input type="radio" name="figures" class="figure" value="64" id="64"
+                        onclick="close_dropdown()"><label for="64"><img class="double-figure" src="./src/64.png"
+                          height="20" valign="middle" alt="64"></label></td>
+                    <td><input type="radio" name="figures" class="figure" value="#64" id="#64"
+                        onclick="close_dropdown()"><label for="#64"><img class="double-figure" src="./src/6slash4.png"
+                          height="20" valign="middle" alt="6\4"> / <img class="double-figure" src="./src/+64.png"
+                          height="20" valign="middle" alt="#64"></label>
+                    </td>
+                    <td><input type="radio" name="figures" class="figure" value="642" id="642"
+                        onclick="close_dropdown()"><label for="642"><img src="./src/642.png" height="28" valign="middle"
+                          alt="642"></label></td>
+                  </tr>
+                  <tr>
+                    <td><input type="radio" name="figures" class="figure" value="643" id="643"
+                        onclick="close_dropdown()"><label for="643"><img src="./src/643.png" height="28" valign="middle"
+                          alt="643"></label></td>
+                    <td><input type="radio" name="figures" class="figure" value="#643" id="#643"
+                        onclick="close_dropdown()"><label for="#643"><img src="./src/+643.png" height="28"
+                          valign="middle" alt="#643"></label></td>
+                    <td><input type="radio" name="figures" class="figure" value="#6#43" id="#6#43"
+                        onclick="close_dropdown()"><label for="#6#43"><img src="./src/+6+43.png" height="28"
+                          valign="middle" alt="#6#43"></label></td>
+                    <td><input type="radio" name="figures" class="figure" value="6#43" id="6#43"
+                        onclick="close_dropdown()"><label for="6#43"><img src="./src/6+43.png" height="28"
+                          valign="middle" alt="6#43"></label></td>
+                    <td><input type="radio" name="figures" class="figure" value="65" id="65"
+                        onclick="close_dropdown()"><label for="65"><img class="double-figure" src="./src/65.png"
+                          height="20" valign="middle" alt="65"></label></td>
+                  </tr>
+                  <tr>
+                    <td><input type="radio" name="figures" class="figure" value="65#3" id="65#3"
+                        onclick="close_dropdown()"><label for="65#3"><img src="./src/65+.png" height="28"
+                          valign="middle" alt="65#"> / <img src="./src/65+3.png" height="28" valign="middle"
+                          alt="65#3"></label></td>
+                    <td><input type="radio" name="figures" class="figure" value="65b3" id="65b3"
+                        onclick="close_dropdown()"><label for="65b3"><img src="./src/65b.png" height="28"
+                          valign="middle" alt="65b"> / <img src="./src/65b3.png" height="28" valign="middle"
+                          alt="65b3"></label></td>
+                    <td><input type="radio" name="figures" class="figure" value="#65" id="#65"
+                        onclick="close_dropdown()"><label for="#65"><img class="double-figure" src="./src/6slash5.png"
+                          height="21" valign="middle" alt="6\5"> / <img class="double-figure" src="./src/+65.png"
+                          height="20" valign="middle" alt="#65"></label>
+                    </td>
+                    <td><input type="radio" name="figures" class="figure" value="#6b5" id="#6b5"
+                        onclick="close_dropdown()"><label for="#6b5"><img class="double-figure" src="./src/6slashb5.png"
+                          height="21" valign="middle" alt="6\b5"> / <img class="double-figure" src="./src/+6b5.png"
+                          height="20" valign="middle" alt="#6b5"></label>
+                    </td>
+                    <td><input type="radio" name="figures" class="figure" value="7" id="7"
+                        onclick="close_dropdown()"><label for="7">7</label></td>
+                  </tr>
+                  <tr>
+                    <td><input type="radio" name="figures" class="figure" value="b7" id="b7"
+                        onclick="close_dropdown()"><label for="b7">♭7</label></td>
+                    <td><input type="radio" name="figures" class="figure" value="73" id="73"
+                        onclick="close_dropdown()"><label for="73"><img class="double-figure" src="./src/73.png"
+                          height="20" valign="middle" alt="73"></label></td>
+                    <td><input type="radio" name="figures" class="figure" value="7#3" id="7#3"
+                        onclick="close_dropdown()"><label for="7#3"><img class="double-figure" src="./src/7+.png"
+                          height="20" valign="middle" alt="7#"> / <img class="double-figure" src="./src/7+3.png"
+                          height="20" valign="middle" alt="7#3"></label></td>
+                    <td><input type="radio" name="figures" class="figure" value="742" id="742"
+                        onclick="close_dropdown()"><label for="742"><img src="./src/742.png" height="28" valign="middle"
+                          alt="742"></label></td>
+                    <td><input type="radio" name="figures" class="figure" value="743" id="743"
+                        onclick="close_dropdown()"><label for="743"><img src="./src/743.png" height="28" valign="middle"
+                          alt="743"></label></td>
+                  </tr>
+                  <tr>
+                    <td><input type="radio" name="figures" class="figure" value="754" id="754"
+                        onclick="close_dropdown()"><label for="754"><img class="double-figure" src="./src/74.png"
+                          height="20" valign="middle" alt="74"> / <img src="./src/754.png" height="28" valign="middle"
+                          alt="754"></label></td>
+                    <td><input type="radio" name="figures" class="figure" value="8" id="8"
+                        onclick="close_dropdown()"><label for="8">8</label></td>
+                    <td><input type="radio" name="figures" class="figure" value="84" id="84"
+                        onclick="close_dropdown()"><label for="84"><img class="double-figure" src="./src/84.png"
+                          height="20" valign="middle" alt="84"></label></td>
+                    <td><input type="radio" name="figures" class="figure" value="853" id="853"
+                        onclick="close_dropdown()"><label for="853"><img src="./src/853.png" height="28" valign="middle"
+                          alt="853"></label></td>
+                    <td><input type="radio" name="figures" class="figure" value="953" id="9"
+                        onclick="close_dropdown()"><label for="9">9</label></td>
+                  </tr>
+                </tbody>
+              </table>
+            </span>
+          </span>
+        </td>
+      </tr>
+      <tr>
+        <td><input id="chord" type="button" onclick="show_notes_to_play()" value="计算应该演奏的和弦"></td>
+        <td>
+          <div id="demo"></div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</body>
+
+</html>

@@ -1,50 +1,6 @@
-# MFUN 轻量影视媒体库 (梅林固件优化版)
-[![license](https://img.shields.io/github/license/Genius-Society/MFUN.svg)](https://github.com/Genius-Society/MFUN/blob/main/LICENSE)
-[![sourceforge](https://img.shields.io/badge/release-SourceForge-ff6600.svg)](https://sourceforge.net/projects/mfun/files)
+# 数字低音计算器
+[![license](https://img.shields.io/github/license/Genius-Society/figured_bass_calculator.svg)](./LICENSE)
+[![auto-sync](https://github.com/Genius-Society/figured_bass_calculator/actions/workflows/auto-sync.yml/badge.svg?branch=en)](https://github.com/Genius-Society/figured_bass_calculator/actions/workflows/auto-sync.yml?query=branch%3Aen)
+[![hf](https://img.shields.io/badge/huggingface-figured__bass__calculator-ffd21e.svg)](https://huggingface.co/spaces/Genius-Society/figured_bass_calculator)
 
-The MFUN plugin on Merlin, **my version supports intranet tunneling**:
-![](https://foruda.gitee.com/images/1732332422663431272/c29bc93a_14243051.png)
-
-## Environment
-Install [7-zip](https://www.7-zip.org/download.html) and add it to environment variables, install Python 3.9+ on Windows 10
-
-## Code download
-```bash
-git clone git@github.com:Genius-Society/MFUN.git
-cd MFUN
-```
-
-## Remove CRLFs caused by Windows
-(If happens at the first time of cloning into windows local)<br>
-Open Git Bash here:
-```bash
-sh rm_crlf.sh
-```
-
-The following issue is generally caused by CRLFs:
-![](https://foruda.gitee.com/images/1731801932932166111/6277aeab_14243051.png)
-
-### Git cfg solution
-```bash
-git config --global core.safecrlf false
-```
-
-## Build on Windows
-```bash
-python build.py
-```
-
-## Usage
-1. Access high-capacity hard disks outside the router
-2. Install `USB2JFFS` plugin and mount the virtual memory on an external hard disk
-3. Assume the temp dir is `/mnt/sda/tmp`, you can assign `/mnt/sda/tmp` as both `配置缓存路径` to fill in required blanks on the MFUN plugin panel of `Software Center`
-4. Open `控制台` to login with default username and pass and customize them
-5. Switch to `媒体库 - 媒体库管理`, click `添加媒体库` to add videos into the media lib, don't forget to assign `所属用户`
-6. If you want meta-data function work, the workaround is to rename your videos ensuring their filename can pinpoint movies and TVs in [TMDB](https://www.themoviedb.org), you can try to search for movies and TVs by keyword, if the result is one and only, just rename the video to this keyword
-
-## Future work
-Support HTTPS intranet tunneling
-
-## Thanks
-- <https://github.com/Carseason/rogsoft_mfun>
-- <https://rogsoft.ddnsto.com/mfun/mfun.tar.gz>
+数字低音是一种音乐理论符号系统，起源于巴洛克音乐时期，用于指导和声音乐的演奏和编排。它通过在音符上方的数字表示和弦中根音之上的音程，下方的数字表示和弦中根音之下的音程，来指示和声音乐中的和弦构成和排列方式。这种灵活的符号系统在巴洛克音乐中得到了广泛应用，并在后续的音乐时期中继续发展和演变，成为了西方古典音乐理论的重要组成部分。

@@ -1,0 +1,31 @@
+table {
+    border-collapse: collapse;
+}
+
+#chord {
+    margin: 0 auto;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    display: block;
+    float: right;
+}
+
+#demo {
+    display: contents;
+}
+
+select {
+    width: 100%;
+}
+
+iframe {
+    width: 100%;
+    aspect-ratio: 16/9;
+}
+
+#maintab {
+    margin: 0 auto;
+}
